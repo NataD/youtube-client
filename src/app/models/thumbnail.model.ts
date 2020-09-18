@@ -1,4 +1,4 @@
-import {ThumbnailData} from ThumbnailData;
+import {ThumbnailData} from "./ThumbnailData";
 
 export class Thumbnail {
   constructor(private _default: ThumbnailData = null,
