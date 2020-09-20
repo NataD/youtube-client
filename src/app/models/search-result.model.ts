@@ -1,5 +1,5 @@
-import {SearchItem} from "./SearchItem";
-import {SearchResultPageInfo} from "./SearchResultPageInfo";
+import {SearchItem} from "./search-item.model";
+import {SearchResultPageInfo} from "./search-result-page-info.model";
 
 export class SearchResults {
   constructor(private _kind: string = null,
@@ -18,10 +18,6 @@ export class SearchResults {
 
   get items(): SearchResultPageInfo {
     return this._pageInfo;
-  }
-
-  get items(): SearchItem[] {
-    return this._items;
   }
 
   static fromRaw(data: any): SearchResults {

@@ -1,5 +1,5 @@
-import {Thumbnail} from "./Thumbnail";
-import {SearchItemLocalized} from "./SearchItemLocalized";
+import {Thumbnail} from "./thumbnail.model";
+import {SearchItemLocalized} from "./search-item-localized.model";
 
 export class SearchItemSnippet {
   constructor(private _publishedAt: string = null,

@@ -1,15 +1,15 @@
-import {SearchItem} from "./SearchItem";
+import {SearchItem} from "./search-item.model";
 
 export class SearchResultPageInfo {
   constructor(private _totalResults: number = null,
               private _resultsPerPage: number = null) {
   }
 
-  get totalResults(): string {
+  get totalResults(): number {
     return this._totalResults;
   }
 
-  get resultsPerPage(): string {
+  get resultsPerPage(): number {
     return this._resultsPerPage;
   }
 

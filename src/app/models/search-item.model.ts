@@ -1,5 +1,5 @@
-import {SearchItemSnippet} from "./SearchItemSnippet";
-import {SearchItemStatistics} from "./SearchItemStatistics";
+import {SearchItemSnippet} from "./search-item-snippet.model";
+import {SearchItemStatistics} from "./search-item-statistics.model";
 
 export class SearchItem {
   constructor(private _kind: string = null,
