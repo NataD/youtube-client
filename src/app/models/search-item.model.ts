@@ -30,7 +30,6 @@ export class SearchItem {
   }
 
   static fromRaw(data: any): SearchItem {
-    console.log(data);
     if (data === null || data === undefined) {
       return null;
     }

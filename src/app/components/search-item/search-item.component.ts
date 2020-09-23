@@ -7,14 +7,12 @@ import {SearchItem} from '../../models/search-item.model';
   styleUrls: ['./search-item.component.scss']
 })
 export class SearchItemComponent implements OnInit {
-  @Input() searchItems: SearchItem[];
+  @Input() searchItem: SearchItem;
+  public publicationDate: string = '';
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  getPublishDate(item: SearchItem) {
-    // item.snippet.publishedAt
+    this.publicationDate = this.searchItem.snippet.publishedAt;
   }
 }

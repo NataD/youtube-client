@@ -8,6 +8,11 @@ import { SearchItemComponent } from './components/search-item/search-item.compon
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { LoginComponent } from './components/header/login/login.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { ItemBorderColorDirective } from './item-border-color.directive';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
+import { SortByPipe } from './sort-by.pipe';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { LoginComponent } from './components/header/login/login.component';
     SearchItemComponent,
     SearchResultsComponent,
     FilterComponent,
-    LoginComponent
+    LoginComponent,
+    MainPageComponent,
+    ItemBorderColorDirective,
+    FilterPipe,
+    SortByPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

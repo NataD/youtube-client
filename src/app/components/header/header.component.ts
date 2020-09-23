@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() searchItems: any;
   settingsShown: boolean = false;
 
   constructor() { }
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSeetings() {
+    console.log(this.settingsShown);
     this.settingsShown = !this.settingsShown;
   }
 }

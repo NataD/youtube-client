@@ -11,6 +11,8 @@ import {SearchResults} from "../../models/search-result.model";
 })
 export class SearchResultsComponent implements OnInit {
   searchItems$: Observable<any>;
+  public searchInput: string;
+
   constructor(
     private cd: ChangeDetectorRef,
   ) { }
@@ -29,6 +31,7 @@ export class SearchResultsComponent implements OnInit {
       map(resp => {
         console.log('-=-=-=-=-', resp);
         console.log(SearchResults.fromRaw(resp));
+      //  this.searchInput = SearchResults.fromRaw(data);
         return SearchResults.fromRaw(resp);
         // this.showLoaderSubject.next(false);
         // return AppointmentList.fromRaw(resp)
