@@ -30,6 +30,7 @@ export class SearchItem {
   }
 
   static fromRaw(data: any): SearchItem {
+    console.log(data);
     if (data === null || data === undefined) {
       return null;
     }
@@ -41,19 +42,5 @@ export class SearchItem {
       SearchItemSnippet.fromRaw(data.snippet),
       SearchItemStatistics.fromRaw(data.statistics)
     );
-  }
-}
-
-const item = {
-  "kind": "youtube#video",
-  "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/tmmI1yiRrmLWlKikXk1gD3TXsUI\"",
-  "id": "YN8zNnV0sK8",
-
-  "statistics": {
-    "viewCount": "33265",
-    "likeCount": "1173",
-    "dislikeCount": "26",
-    "favoriteCount": "0",
-    "commentCount": "170"
   }
 }

@@ -1,27 +1,31 @@
-<div class="searchItem">
-  <img src="" alt="">
+<div class="searchItem" *ngFor="let item of searchItems">
+  <div class="thumbnailContainer">
+    <img src={{item.snippet.thumbnails.default.url}} alt="thumbnail" class="itemImg">
+  </div>
   <div class="actionsContainer">
     <div class="action">
-      <img src="" alt="">
-      <span class="count">10</span>
+      <img src="./../../assets/images/viewed_icon.png" alt="viewed">
+      <span class="action-data">{{item.statistics.viewCount}}</span>
     </div>
 
     <div class="action">
-      <img src="" alt="">
-      <span class="count">100</span>
+      <img src="./../../assets/images/liked_icon.png" alt="likes">
+      <span class="action-data">{{item.statistics.likeCount}}</span>
     </div>
 
     <div class="action">
-      <img src="" alt="">
-      <span class="count">52</span>
+      <img src="./../../assets/images/dislike_icon.png" alt="dislike">
+      <span class="action-data">{{item.statistics.dislikeCount}}</span>
     </div>
 
     <div class="action">
-      <img src="" alt="">
-      <span class="count">2</span>
+      <img src="./../../assets/images/files_icon.png" alt="files">
+      <span class="action-data">{{item.statistics.commentCount}}</span>
     </div>
 
   </div>
-  <h3 class="itemTitle"></h3>
-  <button type="button" name="button">more ...</button>
+  <h3 class="itemTitle">{{item.snippet.title}}</h3>
+  <div class="btnWrapper">
+    <button type="button" name="button" class="itemBtn">more ...</button>
+  </div>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {SearchItem} from '../../models/search-item.model';
 
 @Component({
   selector: 'app-search-item',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-item.component.scss']
 })
 export class SearchItemComponent implements OnInit {
+  @Input() searchItems: SearchItem[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  getPublishDate(item: SearchItem) {
+    // item.snippet.publishedAt
+  }
 }

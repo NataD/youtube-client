@@ -1,1 +1,3 @@
-<app-search-item></app-search-item>
+<div class="searchList" *ngIf="searchItems$ | async as searchItems">
+  <app-search-item [searchItems]="searchItems.items"></app-search-item>
+</div>

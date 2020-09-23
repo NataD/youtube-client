@@ -16,14 +16,18 @@ export class SearchResults {
     return this._etag;
   }
 
-  get items(): SearchResultPageInfo {
+  get pageInfo(): SearchResultPageInfo {
     return this._pageInfo;
+  }
+
+  get items(): SearchItem[] {
+    return this._items;
   }
 
   static fromRaw(data: any): SearchResults {
     const items = [];
     if (data && Array.isArray(data.items)) {
-      data.items.forEach(item => items.push(SearchItem.fromRaw(item)));
+      data.items.forEach((item: SearchItem) => items.push(SearchItem.fromRaw(item)));
     }
     return new SearchResults(
       data.kind,

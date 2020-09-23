@@ -1,0 +1,65 @@
+.sortingContainer {
+  width: 100%;
+  height: 50px;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sortingLabel {
+    font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+margin-right: 11px;
+/* identical to box height */
+
+
+color: #929292;
+  }
+ul {
+  display: flex;
+  list-style: none;
+  li {
+    button {
+      font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+text-decoration-line: underline;
+
+color: #2F80ED;
+background: transparent;
+outline: none;
+border: none;
+cursor: pointer;
+
+  margin-right: 21px;
+    }
+
+    label {
+      font-family: "Roboto", sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
+
+
+color: #2F80ED;
+margin-right: 10px;
+    }
+
+    input {
+      background-color: #fff;
+      width: 149px;
+      height: 13px;
+      border: none;
+    }
+  }
+}
+}
