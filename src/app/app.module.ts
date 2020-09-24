@@ -7,8 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { LoginComponent } from './components/header/login/login.component';
+import { LoginHeaderComponent } from './components/header/login-header/login-header.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { LoginComponent } from './auth/login/login.component';
 import { ItemBorderColorDirective } from './item-border-color.directive';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
@@ -21,8 +22,9 @@ import { SortByPipe } from './sort-by.pipe';
     SearchItemComponent,
     SearchResultsComponent,
     FilterComponent,
-    LoginComponent,
+    LoginHeaderComponent,
     MainPageComponent,
+    LoginComponent,
     ItemBorderColorDirective,
     FilterPipe,
     SortByPipe
