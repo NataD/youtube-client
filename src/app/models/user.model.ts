@@ -7,7 +7,7 @@ export class User {
               private _token: string) {
   }
 
-  get id(): string {
+  get id(): number {
     return this._id;
   }
 
