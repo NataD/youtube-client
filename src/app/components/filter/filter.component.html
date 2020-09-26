@@ -2,14 +2,23 @@
   <p class="sortingLabel">Sorting by:</p>
   <ul>
     <li>
-      <button type="button" name="button">date</button>
+      <button type="button"
+              name="button"
+              (click)="sortBy('publishedAt')">
+              date
+      </button>
     </li>
     <li>
-      <button type="button" name="button">count of views</button>
+      <button type="button"
+              name="button"
+              (click)="sortBy('viewCount')">
+              count of views
+      </button>
     </li>
     <li>
       <label for="word">name or sentence</label>
-      <input type="text" name="word" value="" [(ngModel)]="searchInput">
+      <input type="text" name="word" value="" [(ngModel)]="searchInput"
+      (input)="inputChange($event.target.value)">
     </li>
   </ul>
 </div>

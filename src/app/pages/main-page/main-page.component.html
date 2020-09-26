@@ -1,5 +1,10 @@
 <app-header [searchItems]="searchItems"></app-header>
-  <app-search-results *ngIf="searchItemsShown"></app-search-results>
+
+<app-search-results *ngIf="searchItemsShown"
+                    [searchInput]="searchInput"
+                    [sortingCriteria]="sortingCriteria"
+                    [asc]="ascending">
+                  </app-search-results>
 
 
 <router-outlet></router-outlet>

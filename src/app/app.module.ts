@@ -9,10 +9,10 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { FilterComponent } from './components/filter/filter.component';
 import { LoginComponent } from './components/header/login/login.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { ItemBorderColorDirective } from './item-border-color.directive';
-import { FilterPipe } from './filter.pipe';
+import { ItemBorderColorDirective } from './directives/item-border-color.directive';
+import { FilterPipe } from './pipes/filter/filter.pipe';
 import { FormsModule } from '@angular/forms';
-import { SortByPipe } from './sort-by.pipe';
+import { SortByPipe } from './pipes/sort/sort-by.pipe';
 
 @NgModule({
   declarations: [

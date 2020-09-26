@@ -1,4 +1,4 @@
 <div class="searchList" *ngIf="searchItems$ | async as searchItems">
-  <app-search-item *ngFor="let item of searchItems.items | filter: searchInput"
+  <app-search-item *ngFor="let item of searchItems.items | filter: searchInput | sortBy: sortingCriteria"
                     [searchItem]="item"></app-search-item>
 </div>

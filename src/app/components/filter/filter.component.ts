@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterListenersService } from './../../services/filter-listeners.service';
 
 @Component({
   selector: 'app-filter',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
   public searchInput: string;
-  constructor() { }
+  ascending: boolean = false;
+
+  constructor(private filterListenersService: FilterListenersService) { }
 
   ngOnInit() {
   }
 
+  inputChange = (event: any) => {
+    this.filterListenersService.filterInputChange.next(event);
+  }
+
+  sortBy = (criteria: string) => {
+    this.filterListenersService.sortResultsBy.next(criteria);
+    this.filterListenersService.ascendingOrder.next(!this.ascending);
+  }
 }
