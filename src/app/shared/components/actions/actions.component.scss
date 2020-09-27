@@ -1,0 +1,22 @@
+.actionsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin-right: 3px;
+    }
+
+    .action-data {
+      font-family: "Roboto", sans-serif;
+      font-size: 10px;
+      line-height: 12px;
+      color: #000000;
+    }
+  }
+}
