@@ -1,0 +1,16 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .username {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    color: #4F4F4F;
+    margin-right: 10.4px;
+  }
+}
