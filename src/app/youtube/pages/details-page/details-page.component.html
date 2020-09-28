@@ -1,0 +1,31 @@
+<div class="details" *ngIf="searchItem$ | async as searchItem">
+  <div class="btnBackContainer">
+    <button type="button" name="button" (click)="goBack()">
+      <img src="" alt="">
+    </button>
+  </div>
+
+  <div class="itemImg" [ngStyle]="{'background-image': 'url(' + itemPhoto + ')'}">
+  </div>
+
+  <div class="itemDetails" [publicationDate]="publicationDate" appItemBorderColor>
+    <div class="header">
+      <p class="title">{{searchItem.snippet.title}}</p>
+      <span class="date">{{searchItem.snippet.publishedAt | formatDate}}</span>
+    </div>
+    <div class="itemInfo">
+      <div class="description">
+        <h6>Description:</h6>
+        <p>{{searchItem.snippet.description}}</p>
+      </div>
+
+      <div class="actionsWrapper">
+        <app-actions [viewCount]="searchItem.statistics.viewCount"
+                     [likeCount]="searchItem.statistics.likeCount"
+                     [dislikeCount]="searchItem.statistics.dislikeCount"
+                     [commentCount]="searchItem.statistics.commentCount">
+        </app-actions>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="searchItem" [publicationDate]="publicationDate" appItemBorderColor>
+  <div class="thumbnailContainer">
+    <img src={{searchItem.snippet.thumbnails.default.url}} alt="thumbnail" class="itemImg">
+  </div>
+
+  <div class="actionsWrapper">
+    <app-actions [viewCount]="searchItem.statistics.viewCount"
+                 [likeCount]="searchItem.statistics.likeCount"
+                 [dislikeCount]="searchItem.statistics.dislikeCount"
+                 [commentCount]="searchItem.statistics.commentCount">
+    </app-actions>
+  </div>
+
+  <h3 class="itemTitle">{{searchItem.snippet.title}}</h3>
+  <div class="btnWrapper">
+    <button type="button" name="button" class="itemBtn" (click)="redirectToDetails(searchItem.id)">more ...</button>
+  </div>
+</div>

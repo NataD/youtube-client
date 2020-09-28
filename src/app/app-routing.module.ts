@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import { NotFoundComponent } from './maintanence/not-found/not-found.component';
-import { DetailsPageComponent } from './pages/details-page/details-page.component';
-import { AuthGuard } from './helpers/auth.guard';
+import { LoginComponent } from './auth/pages/login/login.component';
+import { MainPageComponent } from './youtube/pages/main-page/main-page.component';
+import { NotFoundComponent } from './core/pages/maintanence/not-found/not-found.component';
+import { DetailsPageComponent } from './youtube/pages/details-page/details-page.component';
+import { AuthGuard } from './auth/guards/auth.guard';
+
 const routes: Routes = [
   {
     path: 'auth',
@@ -12,8 +13,8 @@ const routes: Routes = [
   },
   {
     path: 'client',
-    // loadChildren: './panel/panel.module#PanelModule',
     component: MainPageComponent,
+    // loadChildren: './youtube/youtube.module#YoutubeModule',
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     canLoad: [AuthGuard],
