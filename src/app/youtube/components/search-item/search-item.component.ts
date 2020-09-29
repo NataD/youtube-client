@@ -18,6 +18,6 @@ export class SearchItemComponent implements OnInit {
   }
 
   redirectToDetails = (id: string) => {
-    this.router.navigate([`/details/${id}`]);
+    this.router.navigate([`/client/${id}`]);
   }
 }

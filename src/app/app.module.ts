@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
-import { YoutubeModule } from './youtube/youtube.module';
+// import { YoutubeModule } from './youtube/youtube.module';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule,
-    YoutubeModule,
+    SharedModule,
+    // AuthModule,
+    // YoutubeModule,
     CoreModule
   ],
   providers: [

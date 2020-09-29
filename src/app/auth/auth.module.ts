@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { LoginComponent } from './pages/login/login.component';
@@ -8,17 +8,20 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { authBackendProvider } from './helpers/mock-backend-auth';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
     LoginComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    // BrowserModule,
     // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuthRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
