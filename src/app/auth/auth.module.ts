@@ -16,8 +16,6 @@ import { AuthRoutingModule } from './auth-routing.module';
   ],
   imports: [
     CommonModule,
-    // BrowserModule,
-    // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
