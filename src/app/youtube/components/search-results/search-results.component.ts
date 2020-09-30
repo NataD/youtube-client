@@ -11,9 +11,11 @@ import {SearchResults} from "../../models/search-result.model";
 })
 export class SearchResultsComponent implements OnInit {
   searchItems$: Observable<any>;
+  youtubeApi: string = "AIzaSyDJj5k30TQchRIZ6zb6ot2e3xTwrZELToY";
   @Input() searchInput: string;
   @Input() sortingCriteria: string;
   @Input() asc: boolean;
+  @Input() searchResults: SearchResults[];
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -31,6 +33,8 @@ export class SearchResultsComponent implements OnInit {
         return of(err);
       }),
     );
+
+    console.log('------', this.searchResults);
   }
 
 }

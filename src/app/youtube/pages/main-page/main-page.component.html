@@ -1,5 +1,7 @@
-<app-search-results *ngIf="searchItemsShown"
+<app-search-input (search)="handleSearch($event)"></app-search-input>
+<app-search-results *ngIf="!loading"
                     [searchInput]="searchInput"
                     [sortingCriteria]="sortingCriteria"
-                    [asc]="ascending">
+                    [asc]="ascending"
+                    [searchResults]=videos>
                   </app-search-results>

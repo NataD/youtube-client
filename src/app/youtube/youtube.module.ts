@@ -1,5 +1,7 @@
 import { CommonModule} from '@angular/common';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 // import { MainPageComponent } from './pages/main-page/main-page.component';
@@ -10,6 +12,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 import { SharedModule } from '../shared/shared.module';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { YoutubeRoutingModule } from './youtube-routing.module';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 // import { FormatDatePipe } from '../pipes/format-date.pipe';
 
 @NgModule({
@@ -22,9 +25,11 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
     SortByPipe,
     DetailsPageComponent,
     MainPageComponent,
+    SearchInputComponent,
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     // BrowserModule,
     SharedModule,
     YoutubeRoutingModule
