@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 // import { SearchItemComponent } from './components/search-item/search-item.component';
 // import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { FilterComponent } from './components/filter/filter.component';
+// import { FilterComponent } from './components/filter/filter.component';
 import { LoginHeaderComponent } from './components/header/login-header/login-header.component';
 // import { SearchItemComponent } from './components/search-item/search-item.component';
 // import { SearchResultsComponent } from './components/search-results/search-results.component';
@@ -32,7 +32,7 @@ import { AuthModule } from '../auth/auth.module';
     // SortByPipe,
     HeaderComponent,
     LoginHeaderComponent,
-    FilterComponent,
+    // FilterComponent,
     NotFoundComponent,
     // DetailsPageComponent,
     // FormatDatePipe
@@ -40,7 +40,7 @@ import { AuthModule } from '../auth/auth.module';
   exports: [
     HeaderComponent,
     LoginHeaderComponent,
-    FilterComponent,
+    // FilterComponent,
     NotFoundComponent,
   ],
   imports: [

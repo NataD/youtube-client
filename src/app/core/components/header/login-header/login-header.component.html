@@ -1,5 +1,7 @@
 <div class="loginContainer">
-  <p class="username">Your name</p>
+  <p class="username">{{this.username}}</p>
   <img src="./../assets/images/user_icon.png" alt="user">
-  <button type="button" name="button" (click)="logout()">Logout</button>
+  <button *ngIf="isAuthenticated" type="button" name="button" (click)="logout()">Logout</button>
+
+  <button *ngIf="!isAuthenticated" type="button" name="button" (click)="login()">Login</button>
 </div>

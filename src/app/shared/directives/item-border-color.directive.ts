@@ -36,5 +36,13 @@ export class ItemBorderColorDirective {
         'red'
       );
     }
+
+    if (days > 31 && days < 180) {
+      this.renderer.setStyle(
+        this.elementRef.nativeElement,
+        'border-bottom-color',
+        'yellow'
+      );
+    }
   }
 }

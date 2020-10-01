@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../../models/user.model';
 
@@ -30,7 +30,6 @@ export class AuthService {
                   localStorage.setItem('currentUser', JSON.stringify(user));
                   this.currentUserSubject.next(user);
               }
-
               return user;
           }));
         }
@@ -39,5 +38,9 @@ export class AuthService {
            // remove user from local storage to log user out
            localStorage.removeItem('currentUser');
            this.currentUserSubject.next(null);
+       }
+
+       getUserData(): User {
+         return this.currentUserSubject.value;
        }
      }

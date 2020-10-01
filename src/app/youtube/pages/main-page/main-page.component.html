@@ -1,4 +1,11 @@
-<app-search-input (search)="handleSearch($event)"></app-search-input>
+<app-search-input (search)="handleSearch($event)"
+                  (toggleSettings)="toggleSettings($event)">
+                </app-search-input>
+
+<ng-container *ngIf="settingsShown">
+  <app-filter></app-filter>
+</ng-container>
+
 <app-search-results *ngIf="!loading"
                     [searchInput]="searchInput"
                     [sortingCriteria]="sortingCriteria"

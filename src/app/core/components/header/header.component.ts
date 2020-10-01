@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ShowResultsService } from '../../services/show-results/show-results.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,20 +6,9 @@ import { ShowResultsService } from '../../services/show-results/show-results.ser
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  resultsShown: boolean = false;
-  settingsShown: boolean = false;
 
-  constructor(private showResultsService: ShowResultsService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  toggleSeetings() {
-    console.log(this.settingsShown);
-    this.settingsShown = !this.settingsShown;
-  }
-
-  toggleShowResults = (value: boolean) => {
-    this.showResultsService.showResults.next(value);
   }
 }

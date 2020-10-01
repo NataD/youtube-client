@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, pluck, distinctUntilChanged, filter, map } from 'rxjs/operators';
 
@@ -12,33 +12,30 @@ export class SearchInputComponent implements OnInit {
   settingsShown: boolean = false;
   @ViewChild('searchInput') inputElement: ElementRef;
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() toggleSettings: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngAfterViewInit() {
-  fromEvent(this.inputElement.nativeElement, 'keyup')
-    .pipe(
-      debounceTime(500),
-      pluck('target', 'value'),
-      distinctUntilChanged(),
-      filter((value: string) => value.length > 3),
-      map((value) => value)
-    )
-    .subscribe(value => {
-      this.search.emit(value);
-    });
+    fromEvent(this.inputElement.nativeElement, 'keyup')
+      .pipe(
+        debounceTime(500),
+        pluck('target', 'value'),
+        distinctUntilChanged(),
+        filter((value: string) => value.length > 3),
+        map((value) => value)
+      )
+      .subscribe(value => {
+        this.search.emit(value);
+      });
   }
 
   ngOnInit() {
   }
 
-  toggleSeetings() {
+  toggle() {
     console.log(this.settingsShown);
-    this.settingsShown = !this.settingsShown;
+    this.settingsShown = !this.settingsShown
+    this.toggleSettings.emit(this.settingsShown);
   }
-
-  toggleShowResults = (value: boolean) => {
-    console.log(value);
-  }
-
 }
