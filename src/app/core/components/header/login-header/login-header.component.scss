@@ -13,4 +13,17 @@
     color: #4F4F4F;
     margin-right: 10.4px;
   }
+
+  .btnAuth {
+    color: #2F80ED;
+    background: transparent;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

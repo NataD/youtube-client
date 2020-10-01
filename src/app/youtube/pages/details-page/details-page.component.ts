@@ -5,6 +5,7 @@ import mockedData from "../../components/search-results/mocked-data";
 import { SearchItem } from "../../models/search-item.model";
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-details-page',
@@ -13,6 +14,7 @@ import { Location } from '@angular/common';
 })
 export class DetailsPageComponent implements OnInit {
   private searchItem$: Observable<any>;
+  private searchItem: any;
   private itemId: Subscription;
   private id: string;
   private itemPhoto: string;
@@ -21,36 +23,22 @@ export class DetailsPageComponent implements OnInit {
   constructor(
     private cd: ChangeDetectorRef,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private searchService: SearchService
   ) { }
 
   ngOnInit(): void {
     this.itemId = this.route.params.subscribe(params => {
-      console.log(params) //log the entire params object
-      console.log(params['id']) //log the value of id
       this.id = params['id'];
     });
 
-
-    this.searchItem$ = of(mockedData).pipe(
-      map(resp => {
-        console.log(resp);
-        console.log(SearchItem.fromRaw(resp));
-        console.log('this.id', this.id);
-        const selectedItem = resp.items.find((item: any) => {
-          return item.id === this.id;
-        });
-        console.log(selectedItem);
-        this.publicationDate = selectedItem.snippet.publishedAt;
-        this.itemPhoto = selectedItem.snippet.thumbnails.high.url;
-        return SearchItem.fromRaw(selectedItem);
-      }),
-      catchError((err: any) => {
-        // this.router.navigate(['invalid-url']);
-        this.cd.detectChanges();
-        return of(err);
-      }),
-    );
+    this.searchService.getVideoStatistics(this.id).subscribe(
+        (response: any) => {
+          const item = response.items[0];
+          this.itemPhoto = item.snippet.thumbnails.high.url;
+          return this.searchItem = item;
+        }
+      )
   }
 
   ngOnDestroy() {

@@ -66,10 +66,10 @@ handleSearch(inputValue: string) {
       )
   ),
   map((items) => {
-    console.log('^^^^^^^^', items);
+    // this.videos = SearchResults.fromRaw(items);
     this.videos = items;
     this.inputTouched = true;
-           this.loading = false;
+    this.loading = false;
   })
   ).subscribe();
 }
