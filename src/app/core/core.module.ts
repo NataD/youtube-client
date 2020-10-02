@@ -21,6 +21,7 @@ import { NotFoundComponent } from './pages/maintanence/not-found/not-found.compo
 // import { FormatDatePipe } from './pipes/format-date.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthModule } from '../auth/auth.module';
     LoginHeaderComponent,
     // FilterComponent,
     NotFoundComponent,
+    AdminComponent,
     // DetailsPageComponent,
     // FormatDatePipe
   ],
