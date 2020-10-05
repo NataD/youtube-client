@@ -1,0 +1,65 @@
+.adminContainer {
+  width: 350px;
+  height: auto;
+  background: #F2F2F2;
+  margin: 100px auto;
+  padding: 28px 20px 68px;
+  border-radius: 5px;
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 11px;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    position: relative;
+
+    label {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+      color: #828282;
+      margin-bottom: 4px;
+    }
+
+    .formControl {
+      width: 100%;
+      height: 37px;
+      background: #E0E0E0;
+      border: none;
+    }
+
+    .btnPrimary {
+      width: 124px;
+      height: 30px;
+      background: #2F80ED;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      margin-top: 22px;
+    }
+  }
+}

@@ -1,32 +1,32 @@
 <div class="adminContainer">
   <h2>Create new card</h2>
-  <form [formGroup]="adminForm" (ngSubmit)="onCreateCard()">
+  <form [formGroup]="cardForm" (ngSubmit)="onCreateCard()">
     <div class="formGroup">
         <label for="title">Title</label>
-        <input type="text" formControlName="title" class="formControl" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-        <div *ngIf="submitted && f.title.errors" class="invalidFeedback">
-            <div *ngIf="f.title.errors.required">Title is required</div>
+        <input type="text" formControlName="title" class="formControl" [ngClass]="{ 'is-invalid': submitted && form.title.errors }" />
+        <div *ngIf="submitted && form.title.errors" class="invalidFeedback">
+            <div *ngIf="form.title.errors.required">Title is required</div>
         </div>
     </div>
     <div class="formGroup">
         <label for="description">Description</label>
-        <input type="text" formControlName="description" class="formControl" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-        <div *ngIf="submitted && f.description.errors" class="invalidFeedback">
-            <div *ngIf="f.description.errors.required">Description is required</div>
+        <input type="text" formControlName="description" class="formControl" [ngClass]="{ 'is-invalid': submitted && form.description.errors }" />
+        <div *ngIf="submitted && form.description.errors" class="invalidFeedback">
+            <div *ngIf="form.description.errors.required">Description is required</div>
         </div>
     </div>
     <div class="formGroup">
         <label for="img">Img</label>
-        <input type="text" formControlName="img" class="formControl" [ngClass]="{ 'is-invalid': submitted && f.img.errors }" />
-        <div *ngIf="submitted && f.img.errors" class="invalidFeedback">
-            <div *ngIf="f.img.errors.required">Description is required</div>
+        <input type="text" formControlName="img" class="formControl" [ngClass]="{ 'is-invalid': submitted && form.img.errors }" />
+        <div *ngIf="submitted && form.img.errors" class="invalidFeedback">
+            <div *ngIf="form.img.errors.required">Description is required</div>
         </div>
     </div>
     <div class="formGroup">
         <label for="video">Link video</label>
-        <input type="text" formControlName="description" class="formControl" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalidFeedback">
-            <div *ngIf="f.description.errors.required">Description is required</div>
+        <input type="text" formControlName="video" class="formControl" [ngClass]="{ 'is-invalid': submitted && form.video.errors }" />
+        <div *ngIf="submitted && form.video.errors" class="invalidFeedback">
+            <div *ngIf="form.video.errors.required">Video is required</div>
         </div>
     </div>
     <div class="formGroup">

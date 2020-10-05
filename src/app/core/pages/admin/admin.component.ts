@@ -3,6 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '../../services/alert.service';
 import { first } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { add, reset } from '../../custom-card.actions';
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +22,8 @@ export class AdminComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private store: Store<{ customCard: any[] }>
   ) {}
 
   ngOnInit() {
@@ -29,33 +33,28 @@ export class AdminComponent implements OnInit {
       img: ['', Validators.required],
       video: ['', Validators.required]
     });
-
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/client';
   }
 
-  get form() { return this.caForm.controls; }
+  get form() { return this.cardForm.controls; }
 
   onCreateCard() {
     this.submitted = true;
 
-    if (this.loginForm.invalid) {
+    if (this.cardForm.invalid) {
       return;
     }
 
+console.log(this.form);
     this.loading = true;
     const payload = {
-
-    }
-    this.authService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          return this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+      title: this.form.title.value,
+      description: this.form.description.value,
+      img: this.form.img.value,
+      video: this.form.video.value,
+      createdAt: new Date()
+    };
+    console.log(payload);
+    this.store.dispatch(add(payload));
   }
 
 }
