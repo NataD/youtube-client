@@ -4,6 +4,7 @@ import { catchError, map } from "rxjs/operators";
 import mockedData from "./mocked-data";
 import {SearchResults} from "../../models/search-result.model";
 
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',

@@ -5,7 +5,7 @@ import { AlertService } from '../../services/alert.service';
 import { first } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { add, reset } from '../../custom-card.actions';
+import { add, reset } from '../../../redux/actions/custom-card.actions';
 
 @Component({
   selector: 'app-admin',
@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private alertService: AlertService,
-    private store: Store<{ customCard: any[] }>
+    private store: Store<{ customCards: any[] }>
   ) {}
 
   ngOnInit() {

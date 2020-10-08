@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-import { customCardReducer } from './custom-card.reducers';
+// import { StoreModule } from '@ngrx/store';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+//
+// import { appReducers } from './redux/reducers/app.reducers';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginHeaderComponent } from './components/header/login-header/login-header.component';
 import { NotFoundComponent } from './pages/maintanence/not-found/not-found.component';
@@ -30,11 +30,11 @@ import { AdminComponent } from './pages/admin/admin.component';
     ReactiveFormsModule,
     SharedModule,
     AuthModule,
-    StoreModule.forRoot({ customCard: customCardReducer }),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      // logOnly: environment.production, // Restrict extension to log-only mode
-    }),
+    // StoreModule.forRoot(appReducers),
+    // StoreDevtoolsModule.instrument({
+    //   maxAge: 25, // Retains last 25 states
+    //   // logOnly: environment.production, // Restrict extension to log-only mode
+    // }),
   ],
   providers: [],
 })

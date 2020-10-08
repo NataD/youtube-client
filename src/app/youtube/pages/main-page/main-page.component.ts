@@ -5,6 +5,8 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, pluck, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { SearchService } from '../../services/search.service';
 import {SearchResults} from "../../models/search-result.model";
+import { Store } from '@ngrx/store';
+import { retrieveData } from '../../../redux/actions/search.actions';
 
 @Component({
   selector: 'app-main-page',
@@ -24,7 +26,8 @@ export class MainPageComponent implements OnInit {
   constructor(
     private filterListenersService: FilterListenersService,
     private showResultsService: ShowResultsService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private store: Store<{ searchData: any[]}>
   ) {
     this.filterListenersService.filterInputChange.subscribe((input: string) => {
       this.searchInput = input;
@@ -61,6 +64,7 @@ handleSearch(inputValue: string) {
         map((resp: any) => {
           let items = [];
           console.log('aaaa', resp);
+          this.store.dispatch(retrieveData(resp));
           return resp;
         })
       )
